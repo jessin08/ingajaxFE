@@ -2,3 +2,9 @@
     width:10em;
     height:8em;
 }
+.logout{
+    position: absolute;
+    top: 4em;
+    right: 0;
+    cursor: pointer;
+}

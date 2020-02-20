@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { SelectedProductDataComponent } from './product-details/selected-product-data/selected-product-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SelectedProductDataComponent
   ],
   imports: [
     BrowserModule,

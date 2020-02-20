@@ -9,15 +9,15 @@ import {LoginResponse, ProductDetails} from '../models/loginResponse'
   providedIn: 'root'
 })
 export class AuthenticationServeService {
-  private currentUserSubject: BehaviorSubject<ProductDetails>;
-  public currentUser: Observable<ProductDetails>;
+  private currentUserSubject: BehaviorSubject<LoginResponse>;
+  public currentUser: Observable<LoginResponse>;
 
   constructor(private http:HttpClient) {
-      this.currentUserSubject = new BehaviorSubject<ProductDetails>(JSON.parse(localStorage.getItem('currentUser')));
+      this.currentUserSubject = new BehaviorSubject<LoginResponse>(JSON.parse(localStorage.getItem('currentUser')));
       this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  public get currentUserValue(): ProductDetails {
+  public get currentUserValue(): LoginResponse {
       return this.currentUserSubject.value;
   }
 
@@ -28,7 +28,7 @@ export class AuthenticationServeService {
               // userDetails.authdata = window.btoa(username + ':' + password);
               localStorage.setItem('token',userDetails.userToken);
               localStorage.setItem('currentUser', JSON.stringify(userDetails));
-              this.currentUserSubject.next(userDetails.productDetails);
+              this.currentUserSubject.next(userDetails);
               return userDetails;
           }));
   }
