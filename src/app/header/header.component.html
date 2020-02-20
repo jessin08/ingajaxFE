@@ -1,0 +1,9 @@
+<!-- nav -->
+<nav class="navbar navbar-expand " >
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">
+            <img class="logo" src="assets/images/logo.png" alt="ing logo">
+        </a>
+        <a class="nav-item nav-link" *ngIf="isLoggedIn" (click)=logout()>Logout</a>
+    </div>
+  </nav>
