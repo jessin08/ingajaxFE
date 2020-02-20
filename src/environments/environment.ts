@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  loginApiUrl:'http://ingajaxbe.azurewebsites.net/api/logon/GetData',
+  loginApiUrl:'http://google.com/',
 };
 
 /*
