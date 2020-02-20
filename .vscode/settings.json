@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/57407118-be30-4d8d-975a-cec89817a1d6/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/ingajaxfe",
+    "appService.deploySubpath": "dist/ajax-ing"
+}

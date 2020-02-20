@@ -1,17 +1,3 @@
 .card{
-    margin:0 auto;
-    width:50%;
-}
-.card-header{
-    background: #fc6f03;
-    color:#FFF;
-}
-.btn-primary{
-    background-color: #fc6f03;
-    border:1px solid #fc6f03;
-}
-.btn:hover{
-    background-color: #FFF;
-    border:1px solid #fc6f03;
-    color:#fc6f03;
+    margin-top: 30%;
 }

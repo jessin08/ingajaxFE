@@ -5,7 +5,7 @@ import {ProductDetailsComponent} from './product-details/product-details.compone
 import {AuthGuard} from './helpers/auth.guard'
 
 const routes: Routes = [
-  { path: '', component: ProductDetailsComponent, canActivate:[AuthGuard]},
+  { path: '', component: ProductDetailsComponent},
     { path: 'login', component: LoginComponent },
 
     // otherwise redirect to product Details
