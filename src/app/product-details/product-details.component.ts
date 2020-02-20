@@ -12,6 +12,7 @@ import { ProductServiceService } from '../services/product-service.service';
 export class ProductDetailsComponent implements OnInit {
   userProductsDetails:ProductDetails;
   subscription:Subscription;
+  isSelected:boolean;
   constructor(private authenticationService:AuthenticationServeService , private productDetailsService:ProductServiceService) { }
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   selectedProduct(group,productName){
+    this.isSelected=true;
     this.productDetailsService.selectedProductSubject.next({group:group,name:productName});
   }
 

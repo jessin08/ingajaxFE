@@ -11,7 +11,8 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit ,OnDestroy{
   isLoggedIn:boolean;
-  subscription:Subscription
+  subscription:Subscription;
+  userId:string;
   constructor(private authenticationService:AuthenticationServeService,private router:Router) { }
 
   ngOnInit(): void {
@@ -19,6 +20,8 @@ export class HeaderComponent implements OnInit ,OnDestroy{
       //@ts-ignore
       if(userProductDetails && userProductDetails.productDetails.length){
         this.isLoggedIn = true;
+        this.userId = localStorage.getItem("userid");
+        console.log(this.userId)
       } else {
         this.isLoggedIn = false;
       }

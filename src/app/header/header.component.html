@@ -4,6 +4,9 @@
         <a class="nav-item nav-link" routerLink="/">
             <img class="logo" src="assets/images/logo.png" alt="ing logo">
         </a>
+        <div *ngIf="isLoggedIn"  class="userId">Welcome {{userId}}</div>
         <a class="nav-item nav-link logout" *ngIf="isLoggedIn" (click)=logout()>Logout</a>
     </div>
+  
   </nav>
+ 

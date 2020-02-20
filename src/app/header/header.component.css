@@ -8,3 +8,8 @@
     right: 0;
     cursor: pointer;
 }
+.userId{
+    position: absolute;
+    top: 3em;
+    right: 0;
+}

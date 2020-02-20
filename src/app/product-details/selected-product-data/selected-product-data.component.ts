@@ -9,11 +9,15 @@ import { Subscription } from 'rxjs';
 })
 export class SelectedProductDataComponent implements OnInit {
   subscription:Subscription;
+  selectedProduct={};
   constructor(private productService:ProductServiceService) { }
 
   ngOnInit(): void {
-    this.subscription = this.productService.selectedProduct.subscribe(data=>{
-      console.log(data);
+    this.subscription = this.productService.selectedProduct.subscribe(selectedProduct=>{
+      if(selectedProduct.group){
+        this.selectedProduct = selectedProduct;
+        console.log(selectedProduct)
+      }
     })
   }
 
