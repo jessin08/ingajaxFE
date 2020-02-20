@@ -7,7 +7,11 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductServiceService {
-  private selectedProductSubject: BehaviorSubject<null>;
-  public selectedProduct: Observable<null>;
+  public selectedProductSubject: BehaviorSubject<{}>;
+  public selectedProduct: Observable<{}>;
   constructor(private http:HttpClient) { }
+
+  public setData(data){
+    this.selectedProductSubject.next(data)
+  }
 }

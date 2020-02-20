@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductDetails } from '../models/loginResponse';
 import { AuthenticationServeService } from '../services/authentication-serve.service';
 import { Subscription } from 'rxjs';
+import { ProductServiceService } from '../services/product-service.service';
 
 @Component({
   selector: 'app-product-details',
@@ -11,8 +12,7 @@ import { Subscription } from 'rxjs';
 export class ProductDetailsComponent implements OnInit {
   userProductsDetails:ProductDetails;
   subscription:Subscription;
-  isProductSelected
-  constructor(private authenticationService:AuthenticationServeService) { }
+  constructor(private authenticationService:AuthenticationServeService , private productDetailsService:ProductServiceService) { }
 
   ngOnInit(): void {
     this.subscription=this.authenticationService.currentUser.subscribe((userProductDetails)=>{
@@ -24,8 +24,8 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
-  selectedProduct(product){
-
+  selectedProduct(group,productName){
+    this.productDetailsService.selectedProductSubject.next({group:group,name:productName});
   }
 
 }

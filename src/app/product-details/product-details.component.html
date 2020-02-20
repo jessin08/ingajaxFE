@@ -4,16 +4,18 @@
         <hr>
         <p-accordion>
             <p-accordionTab *ngFor="let productGroup of userProductsDetails" header={{productGroup.productGroupName}}|{{productGroup.products.length}} >
-               <div *ngFor="let productname of productGroup.products" (click)="selectedProduct(productname.productId)">
+               <div class="productName" *ngFor="let productname of productGroup.products" (click)="selectedProduct(productGroup.productGroupName, productname)">
                     <div>{{productname.productName}}</div>
                </div>
             </p-accordionTab>
             
         </p-accordion>
     </div>
-    <div *ngIf=true>
-        <app-selected-product-data class="col-lg-6 col-md-6 card"></app-selected-product-data>
+    <div *ngIf=true class="col-lg-6 col-md-6">
+        <app-selected-product-data ></app-selected-product-data>
     </div>
 </div>
+
+
 
  

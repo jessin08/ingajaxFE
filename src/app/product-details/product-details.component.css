@@ -2,3 +2,7 @@
     padding: 3em;
     border:1px solid #fc6f03;
 }
+.productName{
+    font-size: 18px;
+    cursor: pointer;
+}
